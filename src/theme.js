@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material";
-import { blue } from "@mui/material/colors";
 
 export const theme = createTheme({
   // palette: {
@@ -8,12 +7,33 @@ export const theme = createTheme({
   //   },
   // },
   components: {
-    MuiButton: {
+    MuiListItemButton: {
+      // defaultProps: {
+      //   selected: true
+      // },
       styleOverrides: {
-        root: {
-          fontSize: "1rem",
-          color: 'red'
-        },
+        root: ({ ownerState, theme }) => ({
+          ":hover": {
+            backgroundColor: "rgba(226, 237, 248, 0.3)",
+            color: "white",
+            ".MuiListItemIcon-root": {
+              color: "white",
+            },
+          },
+          "&.Mui-selected": {
+            "&:hover": {
+              backgroundColor: "rgba(226, 237, 248, 0.3)",
+              color: "white",
+            },
+            backgroundColor: "rgba(226, 237, 248, 0.3)",
+            color: "white",
+
+            ".MuiListItemIcon-root": {
+              color: "white",
+            },
+          },
+          borderRadius: theme.spacing(2),
+        }),
       },
     },
   },
