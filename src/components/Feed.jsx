@@ -1,10 +1,17 @@
-import React from 'react'
-import { RightBarContainer } from './RightBarStyles';
+import React from "react";
+import Post from "./Post";
+import { StyledContainer } from "./RightBarStyles";
 
 const Feed = () => {
   return (
-    <RightBarContainer>Feed</RightBarContainer>
-  )
-}
+    <StyledContainer>
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+      <Post />
+    </StyledContainer>
+  );
+};
 
-export default Feed
+export default Feed;

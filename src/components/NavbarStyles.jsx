@@ -19,7 +19,7 @@ export const LogoSm = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export const Search = styled("div", {
+export const StyleDiv = styled("div", {
   openProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
   position: "relative",
@@ -65,7 +65,7 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export const SerchButton = styled(IconButton)(({ theme }) => ({
+export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   display: "block",
   // больше 600px показывать этот заголовок
   [theme.breakpoints.up("sm")]: {
@@ -73,7 +73,7 @@ export const SerchButton = styled(IconButton)(({ theme }) => ({
   },
 }));
 
-export const CancelIcon = styled(Cancel)(({ theme }) => ({
+export const StyledCancel = styled(Cancel)(({ theme }) => ({
   height: "100%",
   position: "absolute",
   display: "flex",

@@ -5,11 +5,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import {
   LogoLg,
   LogoSm,
-  Search,
+  StyleDiv,
   SearchIconWrapper,
   StyledInputBase,
-  SerchButton,
-  CancelIcon,
+  StyledIconButton,
+  StyledCancel,
 } from "./NavbarStyles";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
@@ -26,27 +26,27 @@ const Navbar = () => {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <LogoLg variant="h6">ЛОГОТИП</LogoLg>
         <LogoSm variant="h6">ЛОГО</LogoSm>
-        <Search open={openSearch}>
+        <StyleDiv open={openSearch}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase placeholder="Search…" inputProps={{ "aria-label": "search" }} />
-          <CancelIcon
+          <StyledCancel
             onClick={() => {
               setOpenSearch(false);
             }}
           />
-        </Search>
+        </StyleDiv>
 
         <Box sx={{ display: openSearch ? "none" : "flex" }}>
-          <SerchButton
+          <StyledIconButton
             onClick={() => setOpenSearch(true)}
             size="large"
             aria-label="search"
             color="inherit"
           >
             <SearchIcon />
-          </SerchButton>
+          </StyledIconButton>
 
           <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent={4} color="error">

@@ -4,23 +4,25 @@ import LeftBar from "./components/LeftBar";
 import { Grid } from "@mui/material";
 import Feed from "./components/Feed";
 import RightBar from "./components/RightBar";
-import { GridSm } from "./components/RightBarStyles";
+import { GridLg } from "./AppStyles";
+import AddIcon from "./components/AddIcon";
 
 function App() {
   return (
     <>
       <Navbar />
       <Grid container>
-        <Grid item sm={3} xs={2}>
+        <Grid item md={3} sm={3} xs={2}>
           <LeftBar />
         </Grid>
-        <Grid item sm={6} xs={10}>
+        <Grid item md={6} sm={9} xs={10}>
           <Feed />
         </Grid>
-        <GridSm item sm={2}>
+        <GridLg item md={3}>
           <RightBar />
-        </GridSm>
+        </GridLg>
       </Grid>
+      <AddIcon />
     </>
   );
 }
