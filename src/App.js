@@ -21,6 +21,7 @@ function App() {
           <RightBar />
         </GridSm>
       </Grid>
+      
     </>
   );
 }
