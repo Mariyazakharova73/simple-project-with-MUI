@@ -17,7 +17,7 @@ import Badge from "@mui/material/Badge";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import MenuComponent from "./Menu/MenuComponent";
+import MenuComponent from "./MenuComponent";
 
 const Navbar = () => {
   const [openSearch, setOpenSearch] = useState(false);
@@ -35,7 +35,6 @@ const Navbar = () => {
       <StyledToolbar>
         <LogoLg variant="h6">ЛОГОТИП</LogoLg>
         <LogoSm />
-
         <StyleDiv open={openSearch}>
           <SearchIconWrapper>
             <SearchIcon />

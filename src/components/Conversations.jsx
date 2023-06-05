@@ -6,22 +6,22 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import { conversationsData } from "./../../utils/constants";
+import { conversationsData } from "../utils/constants";
 
 const Conversations = () => {
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+    <List>
       {conversationsData.map((item) => {
         return (
-          <>
-            <ListItem alignItems="flex-start">
+          <React.Fragment key={item.id}>
+            <ListItem alignItems="flex-start" key={item.id}>
               <ListItemAvatar>
                 <Avatar alt={item.name} src={item.link} />
               </ListItemAvatar>
               <ListItemText
                 primary={item.text}
                 secondary={
-                  <React.Fragment>
+                  <>
                     <Typography
                       sx={{ display: "inline" }}
                       component="span"
@@ -29,12 +29,12 @@ const Conversations = () => {
                       color="text.primary"
                     ></Typography>
                     {item.message}
-                  </React.Fragment>
+                  </>
                 }
               />
             </ListItem>
             <Divider variant="inset" component="li" />
-          </>
+          </React.Fragment>
         );
       })}
     </List>

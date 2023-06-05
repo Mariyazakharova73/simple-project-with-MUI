@@ -1,6 +1,5 @@
 import React from "react";
 import Post from "./Post";
-import { StyledContainer } from "./RightBarStyles";
 import Box from "@mui/material/Box";
 
 const Feed = () => {

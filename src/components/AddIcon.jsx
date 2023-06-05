@@ -16,7 +16,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const Add = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openAlert, setOpenAlert] = useState(false);
-  
+
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
 

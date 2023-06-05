@@ -1,19 +1,16 @@
 import React from "react";
 import {
-  StyledContainerRightBar,
   StyledWrapper,
   StyledTypography,
   StyledAvatarGroup,
-  StyledLink,
-  StyledBox,
   StyledBoxWrapper,
 } from "./RightBarStyles";
 import Avatar from "@mui/material/Avatar";
-import { avatarsData, linkData } from "./../utils/constants";
+import { avatarsData } from "./../utils/constants";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { itemData } from "./../utils/constants";
-import Conversations from "./Conversations/Conversations";
+import Conversations from "./Conversations";
 
 const RightBar = () => {
   return (
