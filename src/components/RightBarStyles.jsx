@@ -5,8 +5,10 @@ import AvatarGroup from "@mui/material/AvatarGroup";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 
-export const StyledContainer = styled(Container)(({ theme }) => ({
-  paddingTop: theme.spacing(10),
+export const StyledBoxWrapper = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
+  },
 }));
 
 export const StyledContainerRightBar = styled(Container)(({ theme }) => ({
@@ -19,6 +21,7 @@ export const StyledContainerRightBar = styled(Container)(({ theme }) => ({
 }));
 
 export const StyledWrapper = styled(`div`)(({ theme }) => ({
+  position: 'fixed', 
   display: "flex",
   flexDirection: "column",
   maxWidth: 300,

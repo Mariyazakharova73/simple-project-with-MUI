@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import SearchIcon from "@mui/icons-material/Search";
 import {
   LogoLg,
@@ -10,6 +9,7 @@ import {
   StyledInputBase,
   StyledIconButton,
   StyledCancel,
+  StyledToolbar,
 } from "./NavbarStyles";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
@@ -17,20 +17,30 @@ import Badge from "@mui/material/Badge";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import MenuComponent from "./Menu/MenuComponent";
 
 const Navbar = () => {
   const [openSearch, setOpenSearch] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleOpenMenuClick = () => {
+    setMenuOpen(true);
+  };
+  const handleMenuClose = () => {
+    setMenuOpen(false);
+  };
 
   return (
-    <AppBar position="fixed">
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+    <AppBar position="sticky">
+      <StyledToolbar>
         <LogoLg variant="h6">ЛОГОТИП</LogoLg>
-        <LogoSm variant="h6">ЛОГО</LogoSm>
+        <LogoSm />
+
         <StyleDiv open={openSearch}>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
-          <StyledInputBase placeholder="Search…" inputProps={{ "aria-label": "search" }} />
+          <StyledInputBase placeholder="Search…" />
           <StyledCancel
             onClick={() => {
               setOpenSearch(false);
@@ -48,12 +58,12 @@ const Navbar = () => {
             <SearchIcon />
           </StyledIconButton>
 
-          <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <IconButton size="large" color="inherit">
             <Badge badgeContent={4} color="error">
               <MailIcon />
             </Badge>
           </IconButton>
-          <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
+          <IconButton size="large" color="inherit">
             <Badge badgeContent={17} color="error">
               <NotificationsIcon />
             </Badge>
@@ -61,16 +71,15 @@ const Navbar = () => {
           <IconButton
             size="large"
             edge="end"
-            aria-label="account of current user"
-            // aria-controls={menuId}
             aria-haspopup="true"
-            // onClick={handleProfileMenuOpen}
+            onClick={handleOpenMenuClick}
             color="inherit"
           >
             <AccountCircle />
           </IconButton>
         </Box>
-      </Toolbar>
+      </StyledToolbar>
+      <MenuComponent handleMenuClose={handleMenuClose} menuOpen={menuOpen} />
     </AppBar>
   );
 };

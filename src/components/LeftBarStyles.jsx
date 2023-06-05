@@ -2,6 +2,14 @@ import { styled } from "@mui/system";
 import Container from "@mui/material/Container";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import Box from "@mui/material/Box";
+
+export const StyledBox = styled(Box)(({ theme }) => ({
+  height: "100vh",
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
+  },
+}));
 
 export const StyledContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(10),

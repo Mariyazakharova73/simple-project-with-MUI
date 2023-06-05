@@ -14,7 +14,6 @@ export const StyledBox = styled(Box)(({ theme }) => ({
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  backgroundColor: "white",
   // border: "2px solid",
   // borderColor: theme.palette.primary.main,
   borderRadius: "20px",

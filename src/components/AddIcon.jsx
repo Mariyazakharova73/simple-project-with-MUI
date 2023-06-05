@@ -16,6 +16,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const Add = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openAlert, setOpenAlert] = useState(false);
+  
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
 
@@ -23,7 +24,7 @@ const Add = () => {
     setOpenAlert(true);
   };
 
-  const handleCloseAlert = (event, reason) => {
+  const handleCloseAlert = (reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -56,8 +57,8 @@ const Add = () => {
           },
         }}
       >
-        <StyledBox>
-          <Form handleCloseModal={handleCloseModal} handleOpenAlert={handleOpenAlert}/>
+        <StyledBox bgcolor="background.default" color="text.primary">
+          <Form handleCloseModal={handleCloseModal} handleOpenAlert={handleOpenAlert} />
         </StyledBox>
       </Modal>
       <Snackbar open={openAlert} autoHideDuration={3000} onClose={handleCloseAlert}>

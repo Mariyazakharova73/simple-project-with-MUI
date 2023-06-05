@@ -31,11 +31,12 @@ export const postData = [
     postText: `Amongst expansive red sands and spectacular sandstone rock formations, Hisma Desert –
     NEOM, Saudi Arabia | The NEOM Nature Reserve region is being designed to deliver
     protection and restoration of biodiversity across 95% of NEOM.`,
+    date: "May 31, 2023",
   },
 ];
 
 export const avatarsData = [
-  { name: "Remy Sharp", link: "https://mui.com//static/images/avatar/1.jpg" },
+  { name: "Remy Sharp", link: "https://mui.com/static/images/avatar/1.jpg" },
   { name: "Travis Howard", link: "https://mui.com//static/images/avatar/2.jpg" },
   { name: "Cindy Baker", link: "https://mui.com//static/images/avatar/3.jpg" },
   { name: "Agnes Walker", link: "https://mui.com//static/images/avatar/4.jpg" },
@@ -84,11 +85,26 @@ export const itemData = [
   },
 ];
 
-export const linkData = [
-  { id: 0, text: "Sport" },
-  { id: 1, text: "Food" },
-  { id: 2, text: "Movies" },
-  { id: 3, text: "Music" },
-  { id: 4, text: "Science" },
-  { id: 5, text: "Life" },
+export const conversationsData = [
+  {
+    id: 0,
+    name: "Remy Sharp",
+    link: "https://mui.com/static/images/avatar/1.jpg",
+    text: "Brunch this weekend?",
+    message: " — I'll be in your neighborhood doing errands this…",
+  },
+  {
+    id: 1,
+    name: "Cindy Baker",
+    link: "https://mui.com/static/images/avatar/3.jpg",
+    text: "Oui Oui",
+    message: " — Do you have Paris recommendations? Have you ever…",
+  },
+  {
+    id: 2,
+    name: "Travis Howard",
+    link: "https://mui.com/static/images/avatar/2.jpg",
+    text: "Summer BBQ",
+    message: " — Wish I could come, but I'm out of town this…",
+  },
 ];

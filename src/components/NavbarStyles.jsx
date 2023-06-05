@@ -3,16 +3,22 @@ import { styled, alpha } from "@mui/system";
 import { InputBase } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import { Cancel } from "@mui/icons-material";
+import Toolbar from "@mui/material/Toolbar";
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+
+export const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+}));
 
 export const LogoLg = styled(Typography)(({ theme }) => ({
   display: "none",
-  // больше 600px показывать этот заголовок
   [theme.breakpoints.up("sm")]: {
     display: "block",
   },
 }));
 
-export const LogoSm = styled(Typography)(({ theme }) => ({
+export const LogoSm = styled(AcUnitIcon)(({ theme }) => ({
   display: "block",
   [theme.breakpoints.up("sm")]: {
     display: "none",

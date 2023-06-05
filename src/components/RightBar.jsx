@@ -6,16 +6,18 @@ import {
   StyledAvatarGroup,
   StyledLink,
   StyledBox,
+  StyledBoxWrapper,
 } from "./RightBarStyles";
 import Avatar from "@mui/material/Avatar";
 import { avatarsData, linkData } from "./../utils/constants";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { itemData } from "./../utils/constants";
+import Conversations from "./Conversations/Conversations";
 
 const RightBar = () => {
   return (
-    <StyledContainerRightBar>
+    <StyledBoxWrapper flex={2} p={2}>
       <StyledWrapper>
         <StyledTypography>Online friends</StyledTypography>
         <StyledAvatarGroup max={5}>
@@ -23,7 +25,7 @@ const RightBar = () => {
             return <Avatar key={item.name} src={item.link} />;
           })}
         </StyledAvatarGroup>
-        <StyledTypography>Gallery</StyledTypography>
+        <StyledTypography>Latest Photos</StyledTypography>
         <ImageList rowHeight={100} cols={3} sx={{ margin: 0, marginBottom: "20px" }}>
           {itemData.map((item) => (
             <ImageListItem key={item.img}>
@@ -36,18 +38,10 @@ const RightBar = () => {
             </ImageListItem>
           ))}
         </ImageList>
-        <StyledTypography>Categories</StyledTypography>
-        <StyledBox>
-          {linkData.map((link) => {
-            return (
-              <StyledLink variant="body2" key={link.id}>
-                {link.text}
-              </StyledLink>
-            );
-          })}
-        </StyledBox>
+        <StyledTypography>Latest Conversations</StyledTypography>
+        <Conversations />
       </StyledWrapper>
-    </StyledContainerRightBar>
+    </StyledBoxWrapper>
   );
 };
 
